@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NDOE</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset='utf-8'>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body id="indexBody">
+
+<!-- Loading div -->
+  <div id="loadingWrapper">
+  	<div id="centerLoadingWrapper">
+  		<h1>Loading Page</h1>
+  		<h2 id="song"></h2>
+  	</div>
+  	
+  </div>
+
+<!-- Logo -->
+	<div id="logo" class="bodyEffect">
+		<img src="images/index/Yellow.png" class="ndoeLogo" alt="NDOE Logo">
+
+	</div>
+
+<!-- Menu -->
+	<div class="menu" id="menuID">
+		<ul>
+			<span>
+			<li class="text" id="about">About</li>
+			<li class="text">Music</li>
+			<li class="text">Video</li>
+			</span>
+
+			<span>
+			<li class="text">Dates</li>
+			<li class="text">Shop</li>
+			</span>
+		</ul>
+
+	</div>
+
+
+<!-- About Modal -->
+	<div id="aboutWrapper">
+		
+		<h1 class="closeText"><i class="fa fa-close glitchEffect closeExtras" id="closeAbout"></i></h1>
+
+		<div id="aboutMeTextWrapper">
+			<h1 class="sectionText">About</h1>
+			<div id="aboutText">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec dolor turpis. Praesent eget interdum odio, ut bibendum dolor. Fusce sit amet suscipit erat. Nullam semper risus sapien, at malesuada nisi convallis ac. Proin at sagittis est. Morbi ultrices lacus at ipsum venenatis rutrum. Nunc pulvinar neque odio, et sollicitudin leo dapibus ut. Integer leo ligula, condimentum a odio et, mattis placerat sem.</p>
+			</div>
+		</div>
+	</div>
+
+<!-- Music Modal -->
+	<div id="musicWrapper">
+		<h1 class="closeText"><i class="fa fa-close glitchEffect closeExtras" id="closeMusic"></i></h1>
+
+		<div id="blackBackgroundWrapper">
+			<h1 class="sectionText">Music</h1>
+			<iframe src="https://open.spotify.com/embed/album/1CyqmRy5kHxEADesnJN7eI" frameborder="0" allowtransparency="true" allow="encrypted-media" id="spotify"></iframe>
+		</div>
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

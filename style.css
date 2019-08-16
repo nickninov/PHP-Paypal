@@ -1,0 +1,619 @@
+/* huawei p20 pro */
+
+body, html {
+	margin: 0;
+	padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Font */
+@font-face {
+  font-family: myFont;
+  src: url(fonts/herofonts_new-motor/NewMotor-yEoZ.ttf);
+}
+
+/* Menu */
+.menu {
+	position: absolute;
+	width: 99%;
+	bottom: 15%;
+  -ms-transform: rotate(-2deg); /* IE 9 */
+  -webkit-transform: rotate(-2deg); /* Safari */
+  transform: rotate(-2deg);
+  transition: bottom 1s;
+}
+
+.menu ul {
+  list-style-type: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	-webkit-animation: fade-in 1s ease-in both 1s;
+	        animation: fade-in 1s ease-in both 1s;
+}
+
+.menu ul li {
+	display: inline-block;
+	margin: 2.5%;
+	font-size: 2.5em;
+	font-weight: 100;
+	text-transform: uppercase;
+	transition: font-size 1s;
+}
+
+/* Link hover effect for menu */
+.text, .closeText{
+  color: white;
+	transition: color 0.2s;
+	text-decoration: none;
+	position: relative;
+	padding-bottom: 20px;
+	font-family: myFont;
+}
+
+.text {
+  cursor: pointer;
+}
+
+.closeText {
+  z-index: 3;
+  padding-top: 2%;
+  padding-right: 2%;
+  text-align: right;
+  margin: 0;
+  -webkit-animation: fade-in 0.7s ease-in both 1.3s;
+          animation: fade-in 0.7s ease-in both 1.3s;
+  font-size: 3em;
+}
+
+.text:before, .text:after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: white;
+}
+
+.text:before {
+  opacity: 0;
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+  transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+  transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.text:after {
+  opacity: 0;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.text:hover:before, .text:hover:after, .text:focus:before, .text:focus:after {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.text:hover:before, .text:focus:before {
+  transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.text:hover:after, .text:focus:after {
+  transition: opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
+  transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.text:hover{
+	color: white;
+}
+
+/* Loading page */
+#loadingWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: 999;
+}
+
+
+#centerLoadingWrapper {
+  /*background-color: red;*/
+  color: white;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 30%;
+  font-size: 2em;
+  font-family: myFont;
+  transition: font-size 1s;
+  animation: glitch 1s steps(100) infinite;
+}
+
+
+#centerLoadingWrapper h2{
+  font-style: italic;
+  font-family: sans-serif;
+}
+/* Make Logo and Menu display none */
+#menuID, #logo {
+  display: none;
+}
+
+/* Index page */
+#indexBody {
+	background-image: url('images/index/aIMG_2182_landscape.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
+	transition: background-image 1s;
+}
+
+#logo {
+	position: absolute;
+	top: 15%;
+	width: 100%;
+	text-align: center;
+	transition: top 1s;
+	-webkit-animation: fade-in 1s ease-in both;
+	        animation: fade-in 1s ease-in both;
+}
+
+.ndoeLogo {
+	max-width: 15%;
+	transition: max-width 1s;
+}
+
+
+
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+
+/* About page */
+
+#aboutWrapper {
+  position: absolute;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('images/about/webIMG_2231.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.enterAnimation {
+  -webkit-animation: slide-in-left 1s both;
+          animation: slide-in-left 1s both;
+}
+
+#aboutMeTextWrapper {
+  position: absolute;
+  top: 20%;
+  margin-left: 10%;
+  margin-right: 60%;
+  transition: margin-left 1s, margin-right 1s, top 1s;
+  font-family: sans-serif;
+  display: none;
+}
+
+.sectionText {
+  font-size: 3.5em;
+  color: white;
+  text-transform: uppercase;
+}
+
+#aboutMeTextWrapper .sectionText {
+  position: relative;
+  top: 70px;
+  left: 40px;
+}
+
+#aboutText {
+  background-color: black;
+  color: white;
+  z-index: 2;
+  padding: 7.5%;
+}
+
+#aboutText p {
+  text-align: justify;
+}
+
+.closeExtras{
+  cursor: pointer;
+  float: right;
+}
+
+.closeExtras:hover {
+  animation: glitch 1s steps(100) infinite;
+}
+
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+
+/* Music page */
+
+#musicWrapper {
+  position: absolute;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('images/music/webIMG_2308.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: 1;
+  /*visibility: hidden;*/
+  transition: background-image 1s;
+}
+
+#blackBackgroundWrapper {
+  background-color: black;
+  margin-top: 8%;
+  margin-left: 5%;
+  width: 550px;
+  height: 300px;
+  font-family: sans-serif;
+  position: relative;
+}
+
+#spotify {
+  position: relative;
+  left: 20%;
+  width: 500px;
+  height: 550px;
+  margin: 0;
+  padding: 0;
+}
+
+#blackBackgroundWrapper .sectionText {
+  margin: 0px;
+  padding: 0px;
+}
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+
+/* Mobile responsive design */
+
+/* Index page */
+
+@media only screen and (max-width: 1300px){
+	#logo {
+		top: 35%;
+	}
+}
+
+@media only screen and (max-width: 1150px){
+	#logo {
+		top: 25%;
+	}
+
+	#logo img {
+		max-width: 20%;
+	}
+
+}
+@media only screen and (max-width: 1050px){
+	.menu ul li {
+		font-size: 2em;
+	}
+
+	#logo {
+		top: 30%;
+	}
+
+}
+
+@media only screen and (max-width: 880px){
+	.menu ul li {
+		font-size: 1.5em;
+	}
+
+	#logo img {
+		max-width: 30%;
+	}
+
+	#logo {
+		top: 15%;
+	}
+	
+	.menu {
+		bottom: 13%;
+	}
+
+}
+
+@media only screen and (max-width: 700px) {
+
+	#indexBody {
+		background-image: url('images/index/aIMG_2182_mobile.jpg');
+	}
+
+	#logo {
+		top: 35%;
+	}
+
+	#logo img {
+		max-width: 25%;
+	}
+
+	.menu {
+		bottom: 9%;
+	}
+	.menu span {
+		display: block;
+	}
+
+  /* Loading h1 */
+
+  #loadingWrapper h1 {
+    bottom: 5%;
+    font-size: 1.5em;
+  }
+
+}
+
+@media only screen and (max-width: 400px) {
+
+	#logo {
+		top: 40%;
+	}
+
+	.menu ul li {
+		font-size: 1.2em;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	#logo {
+		top: 40%;
+	}
+}
+
+
+/* About page */
+
+@media only screen and (max-width: 1150px) {
+  #aboutMeTextWrapper {
+    margin-left: 10%;
+    margin-right: 50%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+
+  #aboutMeTextWrapper {
+    top: 30%;
+    left: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0;
+  }
+
+  #aboutText {
+    background-color: black;
+    color: white;
+    padding: 2.5%;
+  }
+
+  .sectionText {
+    font-size: 2.5em;
+    top: 50px;
+    left: 20px;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #aboutMeTextWrapper {
+    top: 10%;
+    left: 0;
+  }
+}
+/* Horizontal */
+
+@media screen and (orientation: landscape) and (max-width: 850px) {
+
+	#indexBody{
+		background-image: url('images/index/aIMG_2182_landscape.jpg');
+	}
+
+	#logo {
+		top: 15%;
+	}
+
+	#logo img {
+		max-width: 10%;
+	}
+
+	.menu ul li {
+		font-size: 1.2em;
+	}
+
+	.menu {
+		bottom: 2%;
+	}
+
+  #aboutMeTextWrapper {
+    top: 10px;
+  }
+
+}
+
+
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+
+/* Index animation */
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* About image */
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+/* Glitch Animation */
+@keyframes glitch { 
+  0% { text-shadow: 3px 0 0 red, -3px 0 0 #0c33f5; filter: blur(0);}
+  1% { text-shadow: 3px 0 0 red, -3px 0 0 #0c33f5; filter: blur(0);}
+  2% { text-shadow: 3px 0 0 red, -3px 0 0 #0c33f5; filter: blur(0);}
+  3% { text-shadow: 3px 0 0 red, -3px 0 0 #0c33f5; filter: blur(0);}
+  4% { text-shadow: 3px 0 0 red, -3px 0 0 #0c33f5; filter: blur(0);}
+  5% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  6% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  7% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  8% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  9% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  10% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  11% { text-shadow: 1px 0 0 red, -1px 0 0 lime; filter: blur(0.5px);}
+  12% { text-shadow: 1px 0 0 red, -1px 0 0 lime; filter: blur(0.5px);}
+  13% { text-shadow: 1px 0 0 red, -1px 0 0 lime; filter: blur(0.5px);}
+  14% { text-shadow: 1px 0 0 red, -1px 0 0 lime; filter: blur(0);}
+  15% { text-shadow: 1px 0 0 red, -1px 0 0 lime; filter: blur(0);}
+  16% { text-shadow: -3px 0 0 red, 3px 0 0 lime; filter: blur(0);}
+  17% { text-shadow: -3px 0 0 red, 3px 0 0 lime; filter: blur(0);}
+  18% { text-shadow: -3px 0 0 red, 3px 0 0 lime; filter: blur(0);}
+  19% { text-shadow: -3px 0 0 red, 3px 0 0 lime; filter: blur(0);}
+  20% { text-shadow: -3px 0 0 red, 3px 0 0 lime; filter: blur(0);}
+  21% { text-shadow: 0.8px 0 0 #0c33f5, -0.8px 0 0 lime; filter: blur(0);}
+  22% { text-shadow: 0.8px 0 0 #0c33f5, -0.8px 0 0 lime; filter: blur(0);}
+  23% { text-shadow: 0.8px 0 0 #0c33f5, -0.8px 0 0 lime; filter: blur(0);}
+  24% { text-shadow: 0.8px 0 0 #0c33f5, -0.8px 0 0 lime; filter: blur(0);}
+  25% { text-shadow: 0.8px 0 0 #0c33f5, -0.8px 0 0 lime; filter: blur(0);}
+  26% { text-shadow: 0.8px 0 0 #0c33f5, -0.8px 0 0 lime; filter: blur(0.5px);}
+  27% { text-shadow: 0.8px 0 0 #0c33f5, -0.8px 0 0 lime; filter: blur(0.5px);}
+  28% { text-shadow: 0.8px 0 0 #0c33f5, -0.8px 0 0 lime; filter: blur(0);}
+  29% { text-shadow: 0.8px 0 0 #0c33f5, -0.8px 0 0 lime; filter: blur(0);}
+  30% { text-shadow: 0.8px 0 0 #0c33f5, -0.8px 0 0 lime; filter: blur(0);}
+  31% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);}
+  32% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);}
+  33% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);}
+  34% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);}
+  35% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0.5px);}
+  36% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0.5px);}
+  37% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0.5px);}
+  38% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);}
+  39% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);}
+  40% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);}
+  41% { text-shadow: 45px 0 0 #0c33f5, -45px 0 0 lime; filter: blur(0);}
+  42% { text-shadow: 0 0 0 #0c33f5, 0 0 0 lime; filter: blur(0);}
+  43% { text-shadow: 1px 0 0 red, -1px 0 0 lime; filter: blur(0);}
+  44% { text-shadow: 1px 0 0 red, -1px 0 0 lime; filter: blur(0);}
+  45% { text-shadow: 1px 0 0 red, -1px 0 0 lime; filter: blur(0);}
+  46% { text-shadow: 1px 0 0 red, -1px 0 0 lime; filter: blur(0.5px);}
+  47% { text-shadow: -3px 0 0 red, 3px 0 0 lime; filter: blur(0.5px);}
+  48% { text-shadow: -3px 0 0 red, 3px 0 0 lime; filter: blur(0);}
+  49% { text-shadow: -3px 0 0 red, 3px 0 0 lime; filter: blur(0);}
+  50% { text-shadow: -3px 0 0 red, 3px 0 0 lime; filter: blur(0);}
+  51% { text-shadow: 3px 0 0 red, -3px 0 0 #0c33f5; filter: blur(0);}
+  52% { text-shadow: 3px 0 0 red, -3px 0 0 #0c33f5; filter: blur(0);}
+  53% { text-shadow: 3px 0 0 red, -3px 0 0 #0c33f5; filter: blur(0);}
+  54% { text-shadow: 3px 0 0 red, -3px 0 0 #0c33f5; filter: blur(0);}
+  55% { text-shadow: 3px 0 0 red, -3px 0 0 #0c33f5; filter: blur(0.5px);}
+  56% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0.5px);}
+  57% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0.5px);}
+  58% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  59% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  60% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  61% { text-shadow: 30px 0 0 red, -30px 0 0 lime; filter: blur(0);}
+  62% { text-shadow: 0 0 0 red, 0 0 0 lime; filter: blur(0);}
+  63% { text-shadow: 1px 0 0 red, -1px 0 0 #0c33f5; filter: blur(0);}
+  64% { text-shadow: 1px 0 0 red, -1px 0 0 #0c33f5; filter: blur(0);}
+  65% { text-shadow: 1px 0 0 red, -1px 0 0 #0c33f5; filter: blur(0);}
+  66% { text-shadow: 1px 0 0 red, -1px 0 0 #0c33f5; filter: blur(0.5px);}
+  67% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0.5px);}
+  68% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  69% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  70% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  71% { text-shadow: 50px 0 0 red, -50px 0 0 #0c33f5; filter: blur(0);}
+  72% { text-shadow: 0 0 0 red, 0 0 0 #0c33f5; filter: blur(0);}
+  73% { text-shadow: 3px 0 0 red, -3px 0 0 #0c33f5; filter: blur(0);}
+  74% { text-shadow: 3px 0 0 red, -3px 0 0 #0c33f5; filter: blur(0);}
+  75% { text-shadow: 3px 0 0 red, -3px 0 0 #0c33f5; filter: blur(0);}
+  76% { text-shadow: 3px 0 0 red, -3px 0 0 #0c33f5; filter: blur(0);}
+  77% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  78% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  79% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  80% { text-shadow: -3px 0 0 red, 3px 0 0 #0c33f5; filter: blur(0);}
+  81% { text-shadow: 1px 0 0 red, -1px 0 0 lime; filter: blur(0);}
+  82% { text-shadow: 1px 0 0 red, -1px 0 0 lime; filter: blur(0);}
+  83% { text-shadow: 1px 0 0 red, -1px 0 0 lime; filter: blur(0.5px);}
+  84% { text-shadow: 1px 0 0 red, -1px 0 0 lime; filter: blur(0.5px);}
+  85% { text-shadow: 1px 0 0 red, -1px 0 0 lime; filter: blur(0.5px);}
+  86% { text-shadow: -3px 0 0 red, 3px 0 0 lime; filter: blur(0.5px);}
+  87% { text-shadow: -3px 0 0 red, 3px 0 0 lime; filter: blur(0.5px);}
+  88% { text-shadow: -3px 0 0 red, 3px 0 0 lime; filter: blur(0);}
+  89% { text-shadow: -3px 0 0 red, 3px 0 0 lime; filter: blur(0);}
+  90% { text-shadow: -3px 0 0 red, 3px 0 0 lime; filter: blur(0);}
+  91% { text-shadow: 60px 0 0 lime, -60px 0 0 #0c33f5; filter: blur(0);}
+  92% { text-shadow: 0 0 0 lime, 0 0 0 #0c33f5; filter: blur(0);}
+  92% { text-shadow: 0.8px 0 0 #0c33f5, -0.8px 0 0 lime; filter: blur(0);}
+  93% { text-shadow: 0.8px 0 0 #0c33f5, -0.8px 0 0 lime; filter: blur(0);}
+  94% { text-shadow: 0.8px 0 0 #0c33f5, -0.8px 0 0 lime; filter: blur(0);}
+  95% { text-shadow: 0.8px 0 0 #0c33f5, -0.8px 0 0 lime; filter: blur(0);}
+  96% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);}
+  97% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);}
+  98% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);}
+  99% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);}
+  100% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);} }
