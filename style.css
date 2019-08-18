@@ -3,14 +3,15 @@
 body, html {
 	margin: 0;
 	padding: 0;
-  height: 100%;
-  overflow: hidden;
+ 	height: 100%;
+ 	width: 100%;
+ 	/*overflow: hidden;*/
 }
 
 /* Font */
 @font-face {
-  font-family: myFont;
-  src: url(fonts/herofonts_new-motor/NewMotor-yEoZ.ttf);
+  font-family: hebar;
+  src: url(fonts/herofonts_new-motor/hebar-normal.ttf);
 }
 
 /* Menu */
@@ -18,14 +19,14 @@ body, html {
 	position: absolute;
 	width: 99%;
 	bottom: 15%;
-  -ms-transform: rotate(-2deg); /* IE 9 */
-  -webkit-transform: rotate(-2deg); /* Safari */
-  transform: rotate(-2deg);
-  transition: bottom 1s;
+	-ms-transform: rotate(-2deg); /* IE 9 */
+	-webkit-transform: rotate(-2deg); /* Safari */
+	transform: rotate(-2deg);
+	transition: bottom 1s;
 }
 
 .menu ul {
-  list-style-type: none;
+ 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 	text-align: center;
@@ -49,7 +50,7 @@ body, html {
 	text-decoration: none;
 	position: relative;
 	padding-bottom: 20px;
-	font-family: myFont;
+	font-family: hebar;
 }
 
 .text {
@@ -118,7 +119,7 @@ body, html {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-color: black;
   z-index: 999;
@@ -126,23 +127,28 @@ body, html {
 
 
 #centerLoadingWrapper {
-  /*background-color: red;*/
   color: white;
   position: absolute;
   width: 100%;
   text-align: center;
-  top: 30%;
-  font-size: 2em;
-  font-family: myFont;
+  top: 40%;
+  font-family: hebar;
   transition: font-size 1s;
   animation: glitch 1s steps(100) infinite;
 }
 
 
+
+#centerLoadingWrapper h1 {
+	font-size: 4em;
+}
+
 #centerLoadingWrapper h2{
   font-style: italic;
-  font-family: sans-serif;
+  font-family: hebar;
+  font-size: 3em;
 }
+
 /* Make Logo and Menu display none */
 #menuID, #logo {
   display: none;
@@ -156,6 +162,8 @@ body, html {
 	background-attachment: fixed;
 	background-size: cover;
 	transition: background-image 1s;
+	height: 100%;
+	background-color: black;
 }
 
 #logo {
@@ -174,7 +182,6 @@ body, html {
 }
 
 
-
 /*----------------------------------------------------------*/
 /*----------------------------------------------------------*/
 /*----------------------------------------------------------*/
@@ -182,17 +189,22 @@ body, html {
 /* About page */
 
 #aboutWrapper {
-  position: absolute;
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  background-image: url('images/about/webIMG_2231.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-  z-index: 1;
-  visibility: hidden;
+	/*position: absolute;*/
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+	/*height: 100vh;*/
+	/*width: 100%;*/
+	background-image: url('images/about/webIMG_2231.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
+	z-index: 1;
+	visibility: hidden;
 }
 
 .enterAnimation {
@@ -206,7 +218,7 @@ body, html {
   margin-left: 10%;
   margin-right: 60%;
   transition: margin-left 1s, margin-right 1s, top 1s;
-  font-family: sans-serif;
+  font-family: hebar;
   display: none;
 }
 
@@ -214,11 +226,12 @@ body, html {
   font-size: 3.5em;
   color: white;
   text-transform: uppercase;
+  font-weight: bolder;
 }
 
 #aboutMeTextWrapper .sectionText {
   position: relative;
-  top: 70px;
+  top: 20px;
   left: 40px;
 }
 
@@ -227,6 +240,8 @@ body, html {
   color: white;
   z-index: 2;
   padding: 7.5%;
+  height: 200px;
+  overflow-y: scroll;
 }
 
 #aboutText p {
@@ -249,28 +264,42 @@ body, html {
 /* Music page */
 
 #musicWrapper {
-  position: absolute;
+  /*position: absolute;*/
   margin: 0;
-  height: 100%;
-  width: 100%;
+  /*height: 100vh;*/
+  /*width: 100%;*/
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background-image: url('images/music/webIMG_2308.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
   z-index: 1;
-  /*visibility: hidden;*/
+  visibility: hidden;
   transition: background-image 1s;
 }
 
+.enterMusicAnimation {
+	-webkit-animation: slide-in-right 0.6s both;
+	        animation: slide-in-right 0.6s both;
+}
+
 #blackBackgroundWrapper {
-  background-color: black;
-  margin-top: 8%;
-  margin-left: 5%;
-  width: 550px;
-  height: 300px;
-  font-family: sans-serif;
-  position: relative;
+  	background-color: black;
+  	margin-top: 8%;
+  	margin-left: 5%;
+  	width: 550px;
+  	height: 300px;
+  	font-family: hebar;
+  	position: relative;
+ 	transition: margin 1s, left 1s, top 1s, width 1s;
+ 	display: none;
+	-webkit-animation: fade-in 1s ease-in both 0.5s;
+	        animation: fade-in 1s ease-in both 0.5s;
 }
 
 #spotify {
@@ -280,12 +309,94 @@ body, html {
   height: 550px;
   margin: 0;
   padding: 0;
+  transition: width 1s;
 }
 
 #blackBackgroundWrapper .sectionText {
   margin: 0px;
   padding: 0px;
+  transition: font-size 1s;
 }
+
+/* Video page */
+
+#videoWrapper {
+	padding: 0;
+ 	margin: 0;
+ 	position: fixed;
+ 	top: 0;
+ 	bottom: 0;
+ 	left: 0;
+ 	right: 0;
+ 	background-image: url('images/video/webIMG_2276.jpg');
+ 	background-repeat: no-repeat;
+ 	background-position: center center;
+ 	background-attachment: fixed;
+ 	background-size: cover;
+ 	visibility: hidden;
+}
+
+.enterVideoAnimation {
+	-webkit-animation: slide-in-bottom 0.6s both;
+	        animation: slide-in-bottom 0.6s both;
+}
+
+#blackVideoWrapper {
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  font-family: hebar;
+  transition: top 1s, left 1s;
+  display: none;
+	-webkit-animation: fade-in 1s ease-in both 0.5s;
+	        animation: fade-in 1s ease-in both 0.5s;
+}
+
+#blackVideoWrapper h1 {
+  text-transform: uppercase;
+  color: white;
+}
+
+#blackVideoWrapper .item {
+  width: 850px;
+  transition: width 1s;
+}
+
+#blackVideoWrapper .item iframe{
+  display: inline-block;
+}
+
+.ndoeVideo {
+  width: 360px;
+  height: 350px;
+  margin-right: 5%;
+  transition: height 1s, width 1s;
+}
+
+.carousel-control.right, .carousel-control.left{
+  background-image: none !important;
+}
+
+.carousel-control {
+  color: rgb(255, 194, 0) !important;
+  opacity: 1 !important;
+}
+
+#blackVideoBackground {
+	background-color: rgba(0,0,0, 0.7);
+	margin-top: 5%;
+	height: 100%;
+	width: 80%;
+	position: absolute;
+	z-index: -1;
+}
+
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
 /*----------------------------------------------------------*/
 /*----------------------------------------------------------*/
 /*----------------------------------------------------------*/
@@ -318,7 +429,6 @@ body, html {
 	#logo {
 		top: 30%;
 	}
-
 }
 
 @media only screen and (max-width: 880px){
@@ -361,13 +471,15 @@ body, html {
 		display: block;
 	}
 
-  /* Loading h1 */
+  /* Loading */
 
-  #loadingWrapper h1 {
+  #centerLoadingWrapper h1 {
     bottom: 5%;
-    font-size: 1.5em;
+    font-size: 3em;
   }
-
+  #centerLoadingWrapper h2 {
+  	font-size: 2em;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -410,12 +522,12 @@ body, html {
   #aboutText {
     background-color: black;
     color: white;
-    padding: 2.5%;
+    padding: 3%;
   }
 
-  .sectionText {
+  #aboutMeTextWrapper .sectionText {
     font-size: 2.5em;
-    top: 50px;
+
     left: 20px;
     text-transform: uppercase;
   }
@@ -427,6 +539,234 @@ body, html {
     left: 0;
   }
 }
+
+
+/* Music page */
+@media only screen and (max-width: 1000px) {
+
+  #musicWrapper {
+    background-image: url('images/music/webIMG_2308_mobile.jpg');
+  }
+
+  #blackBackgroundWrapper {
+    margin: 0;
+    width: 420px;
+    height: 300px;
+    position: fixed;
+    top: 30%;
+    left: 30%;
+  }
+
+  #spotify {
+    position: relative;
+    left: 20%;
+    width: 400px;
+    height: 450px;
+    margin: 0;
+    padding: 0;
+    transition: width 1s, left 1s;
+  }  
+}
+
+@media only screen and (max-width: 950px) {
+
+  #blackBackgroundWrapper {
+    width: 390px;
+    height: 300px;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+  }
+
+  #spotify {
+    position: relative;
+    left: 20%;
+    width: 370px;
+    height: 450px;
+    margin: 0;
+    padding: 0;
+    transition: width 1s;
+  }  
+}
+
+@media only screen and (max-width: 900px) {
+
+  #blackBackgroundWrapper {
+    width: 370px;
+    height: 300px;
+  }
+
+  #spotify {
+    left: 15%;
+    width: 350px;
+    height: 450px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #blackBackgroundWrapper {
+    width: 370px;
+    height: 300px;
+    left: 13%;
+  }
+
+  #spotify {
+    left: 15%;
+    width: 350px;
+    height: 450px;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  #blackBackgroundWrapper {
+    width: 300px;
+    height: 300px;
+  }
+
+  #spotify {
+    width: 280px;
+    height: 450px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #blackBackgroundWrapper {
+    top: 12%;
+    left: 10%;
+    width: 260px;
+    height: 280px;
+  }
+
+  #spotify {
+    width: 260px;
+    height: 480px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  #blackBackgroundWrapper {
+    top: 19%;
+    left: 5%;
+    width: 240px;
+    height: 250px;
+  }
+
+  #spotify {
+    width: 240px;
+    height: 300px;
+  }
+}
+
+/* Video page */
+
+@media only screen and (max-width: 1400px) {
+
+	#blackVideoWrapper {
+		left: 30%;
+	}
+}
+
+@media only screen and (max-width: 1230px) {
+
+	#blackVideoWrapper {
+		left: 20%;
+	}
+}
+
+@media only screen and (max-width: 1130px) {
+
+	#blackVideoWrapper {
+		top: 25%;
+		left: 10%;
+	}
+}
+
+@media only screen and (max-width: 950px) {
+
+	#blackVideoWrapper {
+		left: 5%;
+	}
+
+	.ndoeVideo {
+		width: 290px;
+		height: 300px;
+	}
+	#blackVideoWrapper .item {
+		width: 750px;
+	}
+}
+
+
+@media only screen and (max-width: 800px) {
+
+	#blackVideoWrapper .item {
+		width: 650px;
+	}
+
+	.ndoeVideo {
+		width: 250px;
+		height: 300px;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+
+	#blackVideoWrapper {
+		left: 3%;
+		top: 35%;
+	}
+
+	#blackVideoWrapper .item {
+		width: 500px;
+	}
+
+	.ndoeVideo {
+		width: 220px;
+		height: 200px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.ndoeVideo {
+		width: 130px;
+		height: 150px;
+	}
+
+	#blackVideoWrapper .item {
+		width: 320px;
+	}
+
+	#blackVideoBackground {
+		width: 90%;
+	}
+}
+
+
+@media only screen and (max-width: 400px) {
+	.ndoeVideo {
+		width: 120px;
+		height: 120px;
+
+	}
+
+	#blackVideoWrapper .item {
+		width: 330px;
+		/*background-color: pink;*/
+	}
+
+	#blackVideoBackground {
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 350px) {
+
+	#blackVideoWrapper .item {
+		width: 300px;
+	}
+
+}
+
 /* Horizontal */
 
 @media screen and (orientation: landscape) and (max-width: 850px) {
@@ -451,13 +791,92 @@ body, html {
 		bottom: 2%;
 	}
 
-  #aboutMeTextWrapper {
-    top: 10px;
-  }
+	/* About Horizontal */
+	#aboutWrapper {
+		height: 100vh;
+	}
 
+	#aboutMeTextWrapper {
+		top: 2%;
+	}
+
+	/* Music Horizontal */
+
+	#musicWrapper {
+		background-image: url('images/music/webIMG_2308_landscape.jpg');
+	}
+
+	#blackBackgroundWrapper {
+		width: 390px;
+	    height: 230px;
+	    position: absolute;
+	    top: 7%;
+	    left: 10%;
+	}
+
+	#spotify {
+		position: relative;
+	    left: 20%;
+	    width: 370px;
+	    height: 230px;
+	    margin: 0;
+	    padding: 0;
+	    transition: width 1s;
+	}
+
+	#videoWrapper {
+		background-image: url('images/video/webIMG_2276_landscape.jpg');
+	}
+
+	#blackVideoWrapper {
+		top: 5%;
+		left: 1%;
+	}
+
+	.ndoeVideo {
+		width: 250px;
+		height: 200px;
+	}
+	#blackVideoWrapper .item {
+		width: 630px;
+	}
 }
 
 
+/* Horizontal Music */
+
+@media screen and (orientation: landscape) and (max-width: 600px) {
+ 
+
+
+  #blackBackgroundWrapper {
+    width: 320px;
+    height: 200px;
+  }
+
+  #spotify {
+    left: 20%;
+    width: 320px;
+    height: 190px;
+  }
+}
+
+/* Horizontal Videos */
+
+@media screen and (orientation: landscape) and (max-width: 600px) {
+
+	#blackVideoWrapper {
+		left: 3%;
+	}
+
+	.ndoeVideo {
+		width: 160px;
+		height: 170px;
+	}
+	#blackVideoWrapper .item {
+		width: 400px;
+	}
+}
 /*----------------------------------------------------------*/
 /*----------------------------------------------------------*/
 /*----------------------------------------------------------*/
@@ -511,6 +930,62 @@ body, html {
     opacity: 1;
   }
 }
+
+/* Music image */
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Video image */
+
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
 
 
 /* Glitch Animation */
@@ -616,4 +1091,5 @@ body, html {
   97% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);}
   98% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);}
   99% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);}
-  100% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);} }
+  100% { text-shadow: -3px 0 0 #0c33f5, 3px 0 0 lime; filter: blur(0);} 
+}
