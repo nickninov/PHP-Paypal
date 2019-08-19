@@ -9,10 +9,14 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
+<!-- Bootstrap -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- Font -->
+ 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
 </head>
 
 <body id="indexBody">
@@ -29,7 +33,6 @@
 <!-- Logo -->
 	<div id="logo" class="bodyEffect">
 		<img src="images/index/Yellow.png" class="ndoeLogo" alt="NDOE Logo">
-
 	</div>
 
 <!-- Menu -->
@@ -42,7 +45,7 @@
 			</span>
 
 			<span>
-			<li class="text">Dates</li>
+			<li class="text" id="dates">Dates</li>
 			<li class="text">Shop</li>
 			</span>
 		</ul>
@@ -94,20 +97,20 @@
 
 					      <div class="item active">
 
-					        <iframe src="https://www.youtube.com/embed/kdvs7UzYc4M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-					        class="ndoeVideo"></iframe>
+					        <iframe src="https://www.youtube.com/embed/kdvs7UzYc4M?enablejsapi=1&html5=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+					        class="ndoeVideo" id="videoOne"></iframe>
 
-					        <iframe src="https://www.youtube.com/embed/lcUfqLcQynw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-					        class="ndoeVideo"></iframe>
+					        <iframe src="https://www.youtube.com/embed/lcUfqLcQynw?enablejsapi=1&html5=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+					        class="ndoeVideo" id="videoTwo"></iframe>
 					        <div class="carousel-caption">
 					        </div>
 					      </div>
 
 					      <div class="item">
 
-					        <iframe src="https://www.youtube.com/embed/4mbcd5BqO5o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ndoeVideo"></iframe>
+					        <iframe src="https://www.youtube.com/embed/4mbcd5BqO5o?enablejsapi=1&html5=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ndoeVideo" id="videoThree"></iframe>
 
-					        <iframe src="https://www.youtube.com/embed/hVylfTju6Dc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ndoeVideo"></iframe>
+					        <iframe src="https://www.youtube.com/embed/hVylfTju6Dc?enablejsapi=1&html5=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ndoeVideo" id="videoFour"></iframe>
 
 					        <div class="carousel-caption">
 					        </div>
@@ -115,9 +118,9 @@
 					    
 					      <div class="item">
 
-					        <iframe src="https://www.youtube.com/embed/TrsUYl659VU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ndoeVideo"></iframe>
+					        <iframe src="https://www.youtube.com/embed/TrsUYl659VU?enablejsapi=1&html5=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ndoeVideo" id="videoFive"></iframe>
 
-					        <iframe src="https://www.youtube.com/embed/qxPk37kmV-I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ndoeVideo"></iframe>
+					        <iframe src="https://www.youtube.com/embed/qxPk37kmV-I?enablejsapi=1&html5=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ndoeVideo" id="videoSix"></iframe>
 
 					        <div class="carousel-caption">
 					        </div>
@@ -140,7 +143,42 @@
 
 	</div>
 
+<!-- Dates Modal -->
 
-<script type="text/javascript" src="script.js"></script>
+	<div id="datesWrapper">
+		<h1 class="closeText"><i class="fa fa-close glitchEffect closeExtras" id="closeDates"></i></h1>
+
+		<div id="dateBlackWrapper">
+			
+			<i class="fas fa-angle-up arrow" id="upArrow"></i>
+
+				<h1 class="sectionText">Dates</h1>
+				<div id="datesSection">
+					<h3>1) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+					<h3>2) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+					<h3>3) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+					<h3>4) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+					<h3>5) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+					<h3>6) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+					<h3>7) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+					<h3>8) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+					<h3>9) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+					<h3>10) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+					<h3>11) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+				</div>
+
+			<i class="fas fa-angle-down arrow" id="downArrow"></i>
+		</div>
+
+	</div>
+
+<!-- JavaScript Modal Script -->
+<script type="text/javascript" src="modalScript.js"></script>
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+<!-- jQuery -->
+<script data-require="jquery" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="jQueryScript.js"></script>
+
 </body>
 </html>
