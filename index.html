@@ -7,14 +7,16 @@
 	<meta charset='utf-8'>
 	<link rel="stylesheet" type="text/css" href="style.css">
 
+	<link rel="icon" type="image/jpg" href="images/index/Yellow.png">
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!-- Bootstrap -->
+<!-- Bootstrap for video section -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
-<!-- Font -->
+<!-- Font for arrows -->
  	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
 </head>
@@ -27,7 +29,6 @@
   		<h1>Loading Page</h1>
   		<h2 id="song"></h2>
   	</div>
-  	
   </div>
 
 <!-- Logo -->
@@ -36,21 +37,36 @@
 	</div>
 
 <!-- Menu -->
-	<div class="menu" id="menuID">
-		<ul>
-			<span>
-			<li class="text" id="about">About</li>
-			<li class="text" id="music">Music</li>
-			<li class="text" id="video">Video</li>
-			</span>
+	<nav>
+		<div class="menu" id="menuID">
+			<ul>
+				<span>
+				<li class="text" id="about">About</li>
+				<li class="text" id="music">Music</li>
+				<li class="text" id="video">Video</li>
+				</span>
 
-			<span>
-			<li class="text" id="dates">Dates</li>
-			<li class="text">Shop</li>
-			</span>
-		</ul>
+				<span>
+				<li class="text" id="dates">Dates</li>
+				<li class="text" id="shop">Shop</li>
+				</span>
+			</ul>
+		</div>
+	</nav>
 
-	</div>
+<!-- Footer -->
+	<footer>
+		<div id="footer">
+			<a href="https://www.facebook.com/ndoe.drs/" class="fontIcons" target="_blank"><i class="fab fa-facebook-square"></i></a>
+
+			<a href="https://www.instagram.com/ndoe_drs/?hl=en" class="fontIcons" target="_blank"><i class="fab fa-instagram"></i></a>
+			
+			<a href="https://www.youtube.com/channel/UChiqQYLmt3WZV50dsM88AFg" class="fontIcons" target="_blank"><i class="fab fa-youtube"></i></a>
+
+			<a href="https://soundcloud.com/ndoe-drs?fbclid=IwAR0fMzUg7hb9Qwp9brOmsKeoAIcHpGvxilOmTQ8sLgI9nmBbgFxNGL84w88" class="fontIcons" target="_blank"><i class="fab fa-soundcloud"></i></a>
+
+		</div>
+	</footer>
 
 
 <!-- About Modal -->
@@ -59,15 +75,22 @@
 		<h1 class="closeText"><i class="fa fa-close glitchEffect closeExtras" id="closeAbout"></i></h1>
 
 		<div id="aboutMeTextWrapper">
+
+			<i class="fas fa-angle-up arrow" id="upArrowAbout"></i>
+
 			<h1 class="sectionText">About</h1>
-			<div id="aboutText">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec dolor turpis. Praesent eget interdum odio, ut bibendum dolor. Fusce sit amet suscipit erat. Nullam semper risus sapien, at malesuada nisi convallis ac. Proin at sagittis est. Morbi ultrices lacus at ipsum venenatis rutrum. Nunc pulvinar neque odio, et sollicitudin leo dapibus ut. Integer leo ligula, condimentum a odio et, mattis placerat sem.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec dolor turpis. Praesent eget interdum odio, ut bibendum dolor. Fusce sit amet suscipit erat. Nullam semper risus sapien, at malesuada nisi convallis ac. Proin at sagittis est. Morbi ultrices lacus at ipsum venenatis rutrum. Nunc pulvinar neque odio, et sollicitudin leo dapibus ut. Integer leo ligula, condimentum a odio et, mattis placerat sem.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec dolor turpis. Praesent eget interdum odio, ut bibendum dolor. Fusce sit amet suscipit erat. Nullam semper risus sapien, at malesuada nisi convallis ac. Proin at sagittis est. Morbi ultrices lacus at ipsum venenatis rutrum. Nunc pulvinar neque odio, et sollicitudin leo dapibus ut. Integer leo ligula, condimentum a odio et, mattis placerat sem.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec dolor turpis. Praesent eget interdum odio, ut bibendum dolor. Fusce sit amet suscipit erat. Nullam semper risus sapien, at malesuada nisi convallis ac. Proin at sagittis est. Morbi ultrices lacus at ipsum venenatis rutrum. Nunc pulvinar neque odio, et sollicitudin leo dapibus ut. Integer leo ligula, condimentum a odio et, mattis placerat sem.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec dolor turpis. Praesent eget interdum odio, ut bibendum dolor. Fusce sit amet suscipit erat. Nullam semper risus sapien, at malesuada nisi convallis ac. Proin at sagittis est. Morbi ultrices lacus at ipsum venenatis rutrum. Nunc pulvinar neque odio, et sollicitudin leo dapibus ut. Integer leo ligula, condimentum a odio et, mattis placerat sem.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec dolor turpis. Praesent eget interdum odio, ut bibendum dolor. Fusce sit amet suscipit erat. Nullam semper risus sapien, at malesuada nisi convallis ac. Proin at sagittis est. Morbi ultrices lacus at ipsum venenatis rutrum. Nunc pulvinar neque odio, et sollicitudin leo dapibus ut. Integer leo ligula, condimentum a odio et, mattis placerat sem.</p>
-			</div>
+			<section>
+				<div id="aboutText">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec dolor turpis. Praesent eget interdum odio, ut bibendum dolor. Fusce sit amet suscipit erat. Nullam semper risus sapien, at malesuada nisi convallis ac. Proin at sagittis est. Morbi ultrices lacus at ipsum venenatis rutrum. Nunc pulvinar neque odio, et sollicitudin leo dapibus ut. Integer leo ligula, condimentum a odio et, mattis placerat sem.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec dolor turpis. Praesent eget interdum odio, ut bibendum dolor. Fusce sit amet suscipit erat. Nullam semper risus sapien, at malesuada nisi convallis ac. Proin at sagittis est. Morbi ultrices lacus at ipsum venenatis rutrum. Nunc pulvinar neque odio, et sollicitudin leo dapibus ut. Integer leo ligula, condimentum a odio et, mattis placerat sem.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec dolor turpis. Praesent eget interdum odio, ut bibendum dolor. Fusce sit amet suscipit erat. Nullam semper risus sapien, at malesuada nisi convallis ac. Proin at sagittis est. Morbi ultrices lacus at ipsum venenatis rutrum. Nunc pulvinar neque odio, et sollicitudin leo dapibus ut. Integer leo ligula, condimentum a odio et, mattis placerat sem.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec dolor turpis. Praesent eget interdum odio, ut bibendum dolor. Fusce sit amet suscipit erat. Nullam semper risus sapien, at malesuada nisi convallis ac. Proin at sagittis est. Morbi ultrices lacus at ipsum venenatis rutrum. Nunc pulvinar neque odio, et sollicitudin leo dapibus ut. Integer leo ligula, condimentum a odio et, mattis placerat sem.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec dolor turpis. Praesent eget interdum odio, ut bibendum dolor. Fusce sit amet suscipit erat. Nullam semper risus sapien, at malesuada nisi convallis ac. Proin at sagittis est. Morbi ultrices lacus at ipsum venenatis rutrum. Nunc pulvinar neque odio, et sollicitudin leo dapibus ut. Integer leo ligula, condimentum a odio et, mattis placerat sem.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec dolor turpis. Praesent eget interdum odio, ut bibendum dolor. Fusce sit amet suscipit erat. Nullam semper risus sapien, at malesuada nisi convallis ac. Proin at sagittis est. Morbi ultrices lacus at ipsum venenatis rutrum. Nunc pulvinar neque odio, et sollicitudin leo dapibus ut. Integer leo ligula, condimentum a odio et, mattis placerat sem.</p>
+				</div>
+			</section>
+
+			<i class="fas fa-angle-down arrow" id="downArrowAbout"></i>
 		</div>
 	</div>
 
@@ -89,7 +112,7 @@
 		<div id="blackVideoWrapper">
 				<div id="blackVideoBackground"></div>
 				<h1 class="sectionText">Video</h1>
-
+				<section>
 					<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 					    <!-- Wrapper for slides -->
@@ -118,9 +141,9 @@
 					    
 					      <div class="item">
 
-					        <iframe src="https://www.youtube.com/embed/TrsUYl659VU?enablejsapi=1&html5=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ndoeVideo" id="videoFive"></iframe>
+					        <iframe src="https://www.youtube.com/embed/s7ZignY76hM?enablejsapi=1&html5=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ndoeVideo" id="videoFive"></iframe>
 
-					        <iframe src="https://www.youtube.com/embed/qxPk37kmV-I?enablejsapi=1&html5=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ndoeVideo" id="videoSix"></iframe>
+					        <iframe src="https://www.youtube.com/embed/Tgkp1lvNy7Y?enablejsapi=1&html5=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ndoeVideo" id="videoSix"></iframe>
 
 					        <div class="carousel-caption">
 					        </div>
@@ -137,10 +160,9 @@
 					      <span class="glyphicon glyphicon-chevron-right"></span>
 					      <span class="sr-only">Next</span>
 					    </a>
-					  </div>
+					</div>
+				</section>
 			</div>
-
-
 	</div>
 
 <!-- Dates Modal -->
@@ -153,22 +175,30 @@
 			<i class="fas fa-angle-up arrow" id="upArrow"></i>
 
 				<h1 class="sectionText">Dates</h1>
-				<div id="datesSection">
-					<h3>1) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
-					<h3>2) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
-					<h3>3) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
-					<h3>4) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
-					<h3>5) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
-					<h3>6) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
-					<h3>7) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
-					<h3>8) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
-					<h3>9) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
-					<h3>10) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
-					<h3>11) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
-				</div>
+					<div id="datesSection">
+						<h3>1) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+						<h3>2) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+						<h3>3) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+						<h3>4) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+						<h3>5) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+						<h3>6) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+						<h3>7) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+						<h3>8) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+						<h3>9) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+						<h3>10) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+						<h3>11) 14.06.2019 Shake Thatt Hulm, Plovdiv</h3>
+					</div>
 
 			<i class="fas fa-angle-down arrow" id="downArrow"></i>
 		</div>
+
+	</div>
+
+
+<!-- Shop Modal -->
+
+	<div id="shopModal">
+		<h1 class="closeText"><i class="fa fa-close glitchEffect closeExtras" id="closeShop"></i></h1>
 
 	</div>
 
@@ -179,6 +209,7 @@
 <!-- jQuery -->
 <script data-require="jquery" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="jQueryScript.js"></script>
+
 
 </body>
 </html>

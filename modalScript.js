@@ -4,7 +4,7 @@ function randomNumber(min, max) {
 } 
 
 // Array with all the songs from the album - Хиляди Белези
-var songs = ['Аре на бас', ' G.O.A.T.', 'Излизам за по ено', 'Ше дойде ли с мен', 'Ни стаа', 'Много думи', 'Хайде да спрем', 'Хиляди белези', 'Пълен напред', 'Земай', 'Малко е грозно', 'Хора, хора', 'Знам ко прая', 'Плъх', 'И тва е']
+var songs = ['Аре на бас', ' G.O.A.T.', 'Излизам за по ено', 'Ше дойдеш ли с мен', 'Ни стаа', 'Много думи', 'Хайде да спрем', 'Хиляди белези', 'Пълен напред', 'Земай', 'Малко е грозно', 'Хора, хора', 'Знам ко прая', 'Плъх', 'И тва е']
 
 // Display a random song from the array
 document.getElementById('song').innerHTML = songs[randomNumber(0, songs.length - 1)];
@@ -17,9 +17,10 @@ let stateCheck = setInterval(() => {
     // Remove loading div
     document.getElementById('loadingWrapper').style.display = 'none';
 
-    // Display the Logo and menu
+    // Display the Logo, menu, footer
     document.getElementById('logo').style.display = 'block';
     document.getElementById('menuID').style.display = 'block';
+    document.getElementById('footer').style.display = 'block';
   }
 }, 100);
 
@@ -89,6 +90,22 @@ datesButton.addEventListener("click", openDatesButton);
 var datesCloseButton = document.getElementById("closeDates")
 
 // ---------------------------------------------------------------------------------
+// Shop
+var shopButton = document.getElementById('shop');
+
+var shopModal = document.getElementById('shopModal');
+
+function openShopButton() {
+  shopModal.style.visibility = 'visible';
+  shopModal.style.zIndex = '1';
+  shopModal.style.opacity = '1';
+}
+
+shopButton.addEventListener('click', openShopButton);
+
+var shopCloseButton = document.getElementById('closeShop');
+
+// ---------------------------------------------------------------------------------
 // Close function
 function close() {
 
@@ -109,6 +126,10 @@ function close() {
   // Dates - hide modal and remove animation
   datesModal.style.visibility = 'hidden';
   datesModal.classList.remove("enterDatesAnimation");
+
+  // Shop - hide modal and remove opacity
+  shopModal.style.opacity = '0';
+  shopModal.style.zIndex = '-1';
 }
 
 // ---------------------------------------------------------------------------------
@@ -167,9 +188,23 @@ function onYouTubePlayerAPIReady() {
   });
 }
 
+// Inject YouTube API script
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+// ---------------------------------------------------------------------------------
+// Click to close
+aboutCloseButton.addEventListener('click', close);
+musicCloseButton.addEventListener('click', close);
+datesCloseButton.addEventListener('click', close);
+shopCloseButton.addEventListener('click', close);
+
 function onPlayerReady(event) {
 
-  // Stop videos when X button is pressed and close the modal
+  // Stop videos when X button is pressed and close the Video modal
   videoCloseButton.addEventListener("click", function() {
     videoOne.stopVideo();
     videoTwo.stopVideo();
@@ -181,16 +216,3 @@ function onPlayerReady(event) {
   });
   
 }
-
-// Inject YouTube API script
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/player_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-// ---------------------------------------------------------------------------------
-// Click to close
-aboutCloseButton.addEventListener('click', close);
-musicCloseButton.addEventListener('click', close);
-// videoCloseButton.addEventListener('click', close);
-datesCloseButton.addEventListener('click', close);

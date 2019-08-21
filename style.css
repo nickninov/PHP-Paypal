@@ -4,7 +4,7 @@ body,
 html {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     /*overflow: hidden;*/
 }
@@ -20,10 +20,8 @@ html {
     position: absolute;
     width: 99%;
     bottom: 15%;
-    -ms-transform: rotate(-2deg);
-    /* IE 9 */
-    -webkit-transform: rotate(-2deg);
-    /* Safari */
+    -ms-transform: rotate(-2deg);/* IE 9 */
+    -webkit-transform: rotate(-2deg);/* Safari */
     transform: rotate(-2deg);
     transition: bottom 1s;
 }
@@ -72,6 +70,8 @@ html {
     font-size: 3em;
 }
 
+/* Underline hover menu */
+/*
 .text:before,
 .text:after {
     content: '';
@@ -122,10 +122,55 @@ html {
     transition: opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
     transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}*/
+
+/* Glitch menu hover */
+.text:hover {
+    animation: glitch 1s steps(100) infinite;
 }
 
-.text:hover {
-    color: white;
+/* Footer */
+#footer {
+    display: none;
+	position: absolute;
+	width: 100%;
+	top: 2%;
+	text-align: center;
+    -webkit-animation: fade-in 1s ease-in both 1s;
+    animation: fade-in 1s ease-in both 1s;
+}
+
+.fontIcons {
+	font-size: 3em;
+	color: inherit;
+	opacity: 1;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	color: white;
+}
+
+.fontIcons:hover {
+    animation: glitch 1s steps(100) infinite;
+}
+
+.fa-facebook-square, .fa-instagram, .fa-soundcloud, .fa-youtube{
+	transition: color 0.3s;
+}
+
+.fa-facebook-square:hover {
+	color: #3b5998;
+}
+
+.fa-instagram:hover {
+	color: #DD2A7B;
+}
+
+.fa-soundcloud:hover {
+	color: #ff7700;
+}
+
+.fa-youtube:hover {
+	color: #c4302b;
 }
 
 /* Loading page */
@@ -139,7 +184,6 @@ html {
     z-index: 999;
 }
 
-
 #centerLoadingWrapper {
     color: white;
     position: absolute;
@@ -150,8 +194,6 @@ html {
     transition: font-size 1s;
     animation: glitch 1s steps(100) infinite;
 }
-
-
 
 #centerLoadingWrapper h1 {
     font-size: 4em;
@@ -171,7 +213,7 @@ html {
 
 /* Index page */
 #indexBody {
-    background-image: url('images/index/aIMG_2182_landscape.jpg');
+    background-image: url('images/index/aIMG_2182.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -213,7 +255,7 @@ html {
     margin: 0;
     /*height: 100vh;*/
     /*width: 100%;*/
-    background-image: url('images/about/webIMG_2231.jpg');
+    background-image: url('images/about/about.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -248,6 +290,12 @@ html {
     position: relative;
     top: 20px;
     left: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+#aboutMeTextWrapper .arrow {
+    color: white;
 }
 
 #aboutText {
@@ -255,7 +303,8 @@ html {
     color: white;
     z-index: 2;
     padding: 7.5%;
-    height: 200px;
+    height: 300px;
+    transition: height 1s;
     overflow-y: auto;
 }
 
@@ -265,6 +314,7 @@ html {
 
 #aboutText p {
     text-align: justify;
+    font-size: 1.2em;
 }
 
 .closeExtras {
@@ -456,15 +506,12 @@ html {
     cursor: pointer;
     text-shadow: 1.5px 1.5px #000000;
     transition: font-size 1s;
+    text-align: center;
 }
 
 #upArrow {
     padding: 0px;
     margin: 0px;
-}
-
-#dateBlackWrapper .arrow {
-    text-align: center;
 }
 
 #datesSection {
@@ -482,6 +529,25 @@ html {
 
 #datesSection::-webkit-scrollbar {
     display: none;
+}
+
+#shopModal {
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url('images/shop/webIMG_2326.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    transition: background-image 1s;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.6s;
 }
 
 /*----------------------------------------------------------*/
@@ -545,7 +611,13 @@ html {
 }
 
 @media only screen and (max-width: 700px) {
+	/* Footer */
 
+	.fontIcons {
+		font-size: 2em;
+	}
+
+	/* Body */
     #indexBody {
         background-image: url('images/index/aIMG_2182_mobile.jpg');
     }
@@ -608,7 +680,7 @@ html {
 @media only screen and (max-width: 850px) {
 
     #aboutMeTextWrapper {
-        top: 30%;
+        top: 20%;
         left: 0;
         margin-left: 10%;
         margin-right: 10%;
@@ -621,18 +693,31 @@ html {
         padding: 3%;
     }
 
+    #aboutMeTextWrapper .arrow {
+        font-size: 3em;
+    }
+
     #aboutMeTextWrapper .sectionText {
         font-size: 2.5em;
-
+        top: 10px;
         left: 20px;
         text-transform: uppercase;
     }
+
+    #aboutText {
+        height: 250px;
+    }
+
 }
 
 @media only screen and (max-width: 320px) {
     #aboutMeTextWrapper {
         top: 10%;
         left: 0;
+    }
+
+    #aboutText {
+        height: 200px;
     }
 }
 
@@ -735,7 +820,7 @@ html {
 
     #spotify {
         width: 260px;
-        height: 480px;
+        height: 400px;
     }
 }
 
@@ -872,7 +957,6 @@ html {
     }
 
     #dateBlackWrapper {
-        /*background-color: red;*/
         top: 10%;
         left: 5%;
         width: 80%;
@@ -897,7 +981,7 @@ html {
     }
 
     #logo {
-        top: 15%;
+        top: 20%;
     }
 
     #logo img {
@@ -913,12 +997,13 @@ html {
     }
 
     /* About Horizontal */
-/*    #aboutWrapper {
-        height: 100vh;
-    }*/
 
     #aboutMeTextWrapper {
         top: 2%;
+    }
+
+    #aboutText {
+        height: 190px;
     }
 
     /* Music Horizontal */
